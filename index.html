@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>HCSO Patrol Draw</title>
+<meta name="theme-color" content="#12181f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Patrol Draw">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="manifest" id="manifestLink">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#12181f;
+    --panel:#1b232c;
+    --panel-2:#232d38;
+    --line:#33404d;
+    --amber:#e8a33d;
+    --amber-dim:#8a6a34;
+    --text:#e7e9ec;
+    --muted:#8a97a5;
+    --south:#7fb0e0;
+    --north:#9fd3a8;
+    --east:#e0a5d8;
+    --west:#e8b56a;
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#f2f0ea;
+      --panel:#ffffff;
+      --panel-2:#f7f5f0;
+      --line:#d9d4c8;
+      --amber:#b5761f;
+      --amber-dim:#c99a51;
+      --text:#1c1f23;
+      --muted:#6b6558;
+      --south:#2f6ea8;
+      --north:#3d7a4c;
+      --east:#8a3f80;
+      --west:#8a5a1c;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#12181f; --panel:#1b232c; --panel-2:#232d38; --line:#33404d;
+    --amber:#e8a33d; --amber-dim:#8a6a34; --text:#e7e9ec; --muted:#8a97a5;
+    --south:#7fb0e0; --north:#9fd3a8; --east:#e0a5d8; --west:#e8b56a;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'IBM Plex Sans', system-ui, sans-serif;
+    min-height:100vh;
+    padding:28px 16px 60px;
+  }
+  .wrap{max-width:520px; margin:0 auto;}
+
+  header{margin-bottom:22px;}
+  .dept{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    color:var(--muted);
+    margin-bottom:6px;
+  }
+  h1{
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:28px;
+    margin:0 0 4px;
+    line-height:1.15;
+  }
+  .sub{color:var(--muted); font-size:14px; max-width:42ch;}
+
+  .pool-bar{
+    margin:20px 0 26px;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:14px 16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+  }
+  .pool-count{font-family:'IBM Plex Mono', monospace; font-size:13px;}
+  .pool-count b{color:var(--amber); font-size:16px;}
+  .pool-track{
+    flex:1;
+    height:6px;
+    background:var(--line);
+    border-radius:3px;
+    margin:0 14px;
+    overflow:hidden;
+  }
+  .pool-fill{height:100%; background:var(--amber); transition:width .4s ease;}
+
+  button.draw{
+    width:100%;
+    padding:20px;
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:20px;
+    letter-spacing:0.02em;
+    background:var(--amber);
+    color:#1a1206;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    transition:transform .12s ease, filter .12s ease;
+  }
+  button.draw:hover{filter:brightness(1.06);}
+  button.draw:active{transform:scale(0.98);}
+  button.draw:focus-visible{outline:3px solid var(--text); outline-offset:3px;}
+  button.draw:disabled{background:var(--line); color:var(--muted); cursor:default;}
+
+  .results{margin-top:22px; display:flex; flex-direction:column; gap:10px;}
+  .stop{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-left:4px solid var(--zone-color, var(--amber));
+    border-radius:8px;
+    padding:14px 16px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    opacity:0;
+    transform:translateY(6px);
+    animation:rise .35s ease forwards;
+  }
+  .stop:nth-child(1){animation-delay:.02s;}
+  .stop:nth-child(2){animation-delay:.09s;}
+  .stop:nth-child(3){animation-delay:.16s;}
+  .stop:nth-child(4){animation-delay:.23s;}
+  .stop:nth-child(5){animation-delay:.30s;}
+  @keyframes rise{to{opacity:1; transform:translateY(0);}}
+
+  .stop-num{
+    font-family:'Oswald', sans-serif;
+    font-size:22px;
+    font-weight:600;
+    color:var(--muted);
+    min-width:22px;
+  }
+  .stop-body{flex:1;}
+  .stop-zone{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.06em;
+    color:var(--zone-color, var(--amber));
+    margin-bottom:3px;
+  }
+  .stop-desc{font-size:15px; line-height:1.4;}
+  .stop-code{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--muted);
+    margin-top:4px;
+  }
+
+  .empty{
+    color:var(--muted);
+    font-size:14px;
+    text-align:center;
+    padding:40px 20px;
+    border:1px dashed var(--line);
+    border-radius:10px;
+  }
+
+  .footer-row{
+    margin-top:26px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+  }
+  .reset-link{
+    background:none; border:none;
+    color:var(--muted);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:13px;
+    text-decoration:underline;
+    cursor:pointer;
+    padding:6px 0;
+  }
+  .reset-link:hover{color:var(--text);}
+
+  .log{margin-top:34px;}
+  .log-title{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.06em;
+    color:var(--muted);
+    margin-bottom:10px;
+  }
+  .log-entry{
+    font-size:13px;
+    color:var(--muted);
+    border-top:1px solid var(--line);
+    padding:8px 0;
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+  }
+  .log-entry span:first-child{color:var(--text);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="dept">HUMPHREYS COUNTY SHERIFF'S OFFICE</div>
+    <h1>Tonight's five</h1>
+    <div class="sub">Draws five patrol stops with no repeats until every zone location has come up once.</div>
+  </header>
+
+  <div class="pool-bar" id="installBar" style="display:none; cursor:pointer;">
+    <div class="pool-count">📲 Tap to install as an app</div>
+  </div>
+  <div class="pool-bar" id="iosHint" style="display:none;">
+    <div class="pool-count" style="font-size:13px; line-height:1.4;">On iPhone: tap <b>Share</b> ⬆️, then <b>Add to Home Screen</b>, to install.</div>
+  </div>
+
+  <div class="pool-bar">
+    <div class="pool-count"><b id="poolRemaining">--</b> / <span id="poolTotal">--</span> left in rotation</div>
+    <div class="pool-track"><div class="pool-fill" id="poolFill"></div></div>
+  </div>
+
+  <button class="draw" id="drawBtn">Draw 5 for this shift</button>
+
+  <div class="results" id="results">
+    <div class="empty">No draw yet tonight. Tap the button above.</div>
+  </div>
+
+  <div class="footer-row">
+    <button class="reset-link" id="resetPool">Reset full rotation</button>
+    <button class="reset-link" id="clearLog">Clear shift log</button>
+  </div>
+
+  <div class="log" id="logSection" style="display:none;">
+    <div class="log-title">SHIFT LOG</div>
+    <div id="logEntries"></div>
+  </div>
+</div>
+
+<script>
+// Build the Web App Manifest at runtime so the whole page stays one self-contained file.
+(function(){
+  const manifest = {
+    name: "HCSO Patrol Draw",
+    short_name: "Patrol Draw",
+    description: "Random patrol stop drawer for Humphreys County Sheriff's Office",
+    start_url: ".",
+    display: "standalone",
+    background_color: "#12181f",
+    theme_color: "#12181f",
+    icons: [
+      { src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAGM0lEQVR4nO3dPZbbxhZF4ZKXRuDIkZV7fhqF56fcjhxpCnJAYYmNBZCoQv3cc8/+cttU4WwWu9XvdSkAAAAAAAAAAAAAAABpfFr9Au74/Y8vP1a/Bjx8/+8fyS3JvGjGrkchitAvkNHnETWGkC+K4ecVLYRQL4bh+4gSQogXwfB9rQ5h6X+c4WOzKoTfVvxHS2H8+GjVHqZXx/DxzszbYOoNwPhxxcydTAuA8aPGrL1MCYDxo8WM3QwPgPHjjtH7GRoA40cPI3c0LADGj55G7WlIAIwfI4zYVfcAGD9G6r2vrgEwfszQc2fLfhQCiKBbALz7Y6Zee+sSAOPHCj12x0cgWLv9U3e8+7/37e8/m//Zv77+2/GV5HTnp0cJoLM7Y7+KKD5aFgDjf5gx+jPE8NAaAQE0Wjn6M84xTA/AdfwRh7/nGkJLBARwgcLozzjF0BJA07dBGb8O9ddfo2WXTTeAQwAZh+NwG9TeAgSwk3H4e5lDqA2g+iMQ49eX+c9Zu09+FOKnzKM44vbnPVP9ESjbDcAQ8n0kqvkYZH0DMP4H53OwDcD5oR9xPY+qALJ8/HF92O9kOZeandrdAFke8ihu52MVgNvDbeV0TjYBOD3UHlzOyyIAl4fZm8O5pQ8g+kOM/j346Od3V/oAIos+fgepA1B594oegso5tkgbQPSHFn30e9HPs1XKABQflkIQiuf6TsoAolMYu4t0ASi/SymEoXy+R9IFEJ3CyJ2kCiDDu5NCIBnOeZMmAIWHojDuqxTO+4o0AWSSKZToCGASRh1TigCyXMfPFILJcO4pAohOYcyu5API8C50RiEc9fOXDyA6hRE7I4DgCGgs6QCiX78u443+HF6RDsCFS0grEMAgjFaDbADK126L6EGpPg/ZACKLPlb88nn1C8hk9PC3f7/qu21EBNDB7Hd8QuiHAG5Y/VGHEO6r+gUZUf7foVc/8NXDP7P6XEqJczZXf0kGN0CFKA/3DDdCPb4LdFH08T9Teq2rcQO8oTomboNrCOCE6vD3COE1AtjJMvw9QjhGAD9lHf4eIXxkH4DL8PcI4cE+gG0AbiG4D39jH8DGJQSG/xEB7GQNgeEfI4ATWUJg+K8RwBvPA1KJgdFfRwAVot8KDL8eATSIFgLDbyf549ClxHroq0KIdAalxHlDKIUfh55q9o0QbfjKCKCj0SEw/P743wMMwFB1EIAIohpDNoBIX3AdcRts9OdxRjYAJ24xzUQAAzHc+KQDUL12ayhEpPwcpANQoDBgZwQQGPGMJx+AwvWbecgK5/+KfABZZY4mkhQBKLwLZRy0wrm/kyKAbDLGEhUBTMSw40kTQIbruBSdSLKcd5oAStF4KCoDf0XhnK9KFYC6DHGoSReAwruT8tAVzrdGugBUKUehLGUACu9SioNXONdaKQMoRethKcSgdJ410gZQSvyHpjD8UuKf4x2pA1CgEkFW6QPI/O41Q/bzSx9AKfkf4igO52YRQCkeD7Mnl/OyCaAUn4d6l9M5WQVQitfDbeF2PnYBlOL3kK9yPBfLAErxfNivuJ6HbQCl+D70PedzkP0FGb05/oVU5uFf/QUZ1jfAs8xjOOL25z1DAE9cRuHy57yCj0AnMn4kchr+1Y9ABPBGhhCchr/ha4BO1Mej/vpH4waopHAjMHo+Ag0XMQSG/wsBTLQyBkZ/jAAWmREDo3+PAAK5EwVjb0MAsMa3QYELCADWCADWCADWCADWCADWCADWCADWCADWqgK4+rdrwEo1O+UGgDUCgDUCgDUCgLXqAPhCGJHV7pMbANYIANaaAuBjECJq2SU3AKw1B8AtgEha98gNAGu3AuAWQAR3dsgNAGu3A+AWwEp398cNAGtdAuAWwAo9dtftBiACzNRrb3wEgrWuAXALYIaeO+t+AxABRuq9ryEfgYgAI4zY1bCvAYgAPY3a09AvgokAPYzc0fDvAhEB7hi9nynfBiUCtJixm2l/D0AEqDFrL1P/IowIcMXMnSwbJL9xEnsr3iCX/SgEtwGerdpDiBFyG/ha/UYYIoANIfhYPfxNiBexRwh5RRn+JtSL2SOEPKINfxPyRR0hBj1RR/8s/At8hSjiUBg7AAAAAAAAAAAAAMDB/7ETaMjhG7yTAAAAAElFTkSuQmCC", sizes: "192x192", type: "image/png", purpose: "any maskable" },
+      { src: "data:image/png;base64,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", sizes: "512x512", type: "image/png", purpose: "any maskable" }
+    ]
+  };
+  const blob = new Blob([JSON.stringify(manifest)], {type: 'application/json'});
+  document.getElementById('manifestLink').setAttribute('href', URL.createObjectURL(blob));
+})();
+
+const LOCATIONS = [{"code":"11","zone":"West","desc":"Drive-In, Adaseal, Dan Post, Fast-Trans (70W)","newzone":"West","lat":36.0635,"lng":-87.888},{"code":"18","zone":"West","desc":"Matheson Tri-Gas, Range, Scepter","newzone":"West"},{"code":"84","zone":"West","desc":"Pebble Isle Marina","newzone":"West","lat":36.0614,"lng":-87.9513},{"code":"76","zone":"West","desc":"Gould's Crossing, Rein Ln","newzone":"West"},{"code":"61","zone":"West","desc":"State Park, Nell Beard Rd","newzone":"West","lat":36.0317,"lng":-87.9484},{"code":"12","zone":"West","desc":"Link Rd, Honey Point Ferry Lp","newzone":"West"},{"code":"21","zone":"West","desc":"Flatwoods Rd, Shaver Ln","newzone":"West"},{"code":"62","zone":"West","desc":"Old State Route One (Plant Area)","newzone":"West"},{"code":"32","zone":"West","desc":"Old State Route One (Hustburg Area)","newzone":"West","lat":35.9829,"lng":-87.9598},{"code":"75","zone":"West","desc":"Plant Church of Christ, Pisgah Church","newzone":"West","lat":35.9829,"lng":-87.9598},{"code":"50","zone":"West","desc":"Ebenezer and Hustburg Church","newzone":"West","lat":35.9829,"lng":-87.9598},{"code":"81","zone":"West","desc":"Pump Station Rd and Landing","newzone":"West"},{"code":"80","zone":"West","desc":"Victory Ln, Valley Rd","newzone":"West"},{"code":"51","zone":"West","desc":"City of Waverly Water Plant (Plant Area)","newzone":"West","lat":36.0833,"lng":-87.7936},{"code":"85","zone":"West","desc":"Turkey Creek boat dock area","newzone":"North","lat":36.1998,"lng":-87.9189},{"code":"69","zone":"West","desc":"Mason's Boat Dock area","newzone":"North","lat":36.1998,"lng":-87.9189},{"code":"58","zone":"West","desc":"Low Water Bridge Rd","newzone":"West"},{"code":"24","zone":"West","desc":"Hey Hey Club, Billy's Cold One (Clydeton Rd)","newzone":"North","lat":36.0924,"lng":-87.8029},{"code":"40","zone":"West","desc":"Recycle Center - Clydeton Rd","newzone":"North","lat":36.0924,"lng":-87.8029},{"code":"01","zone":"West","desc":"Recycle Center - Scepter Rd","newzone":"West"},{"code":"17","zone":"West","desc":"Lockhart Rd","newzone":"West","lat":36.0174,"lng":-88.0006},{"code":"59","zone":"West","desc":"Hemby Branch, Baker Ridge Rd","newzone":"West"},{"code":"33","zone":"West","desc":"Bear Creek Landing and Road","newzone":"West"},{"code":"68","zone":"West","desc":"Bascom Church (Clydeton Rd)","newzone":"North","lat":36.0924,"lng":-87.8029},{"code":"00","zone":"West","desc":"Friendship Church (Clydeton Rd)","newzone":"North","lat":36.0924,"lng":-87.8029},{"code":"49","zone":"West","desc":"West Big Richland Rd","newzone":"North","lat":36.1639,"lng":-87.8921},{"code":"25","zone":"West","desc":"East Little Richland, Brazzle Rd","newzone":"North","lat":36.1639,"lng":-87.8921},{"code":"77","zone":"West","desc":"JERA (DuPont)","newzone":"West"},{"code":"47","zone":"West","desc":"Storage Units, Drop In Apts, CBS Apts (70W)","newzone":"West"},{"code":"46","zone":"West","desc":"Richland Harbor","newzone":"North","lat":36.1639,"lng":-87.8921},{"code":"34","zone":"West","desc":"Wisteria Ln","newzone":"West"},{"code":"10","zone":"West","desc":"Flat Rock (70W)","newzone":"West"},{"code":"31","zone":"South","desc":"Storage Units (13 South)","newzone":"South"},{"code":"22","zone":"South","desc":"CO-OP, Recycle Center (W Blue Ck)","newzone":"West"},{"code":"13","zone":"South","desc":"Loretta Lynn's Dude Ranch","newzone":"South","lat":35.9767,"lng":-87.7713},{"code":"14","zone":"South","desc":"Cissie's Country Store (13S)","newzone":"South"},{"code":"83","zone":"South","desc":"Wildwood Church of Christ (13S)","newzone":"South"},{"code":"74","zone":"South","desc":"Old Hwy 13, Cyclone Ln.","newzone":"South","lat":36.0087,"lng":-87.7839},{"code":"37","zone":"South","desc":"Pilot, Cal-Ark, Speedway, McDonalds","newzone":"South","lat":35.8821,"lng":-87.801},{"code":"87","zone":"South","desc":"All the Motels @ Exit 143","newzone":"South","lat":35.8821,"lng":-87.801},{"code":"73","zone":"South","desc":"Bakerville Recycle Center","newzone":"South","lat":35.9422,"lng":-87.8754},{"code":"26","zone":"South","desc":"Bone Ammonia","newzone":"South","lat":35.9422,"lng":-87.8754},{"code":"72","zone":"South","desc":"Bone Cemetery","newzone":"South","lat":35.9344,"lng":-87.8731},{"code":"38","zone":"South","desc":"Roberts Creek Rd, Cell Tower","newzone":"South","lat":35.9027,"lng":-87.8765},{"code":"86","zone":"South","desc":"Bakerville Church of Christ","newzone":"South","lat":35.9422,"lng":-87.8754},{"code":"27","zone":"South","desc":"Roberts Creek Rd, Roberts Loop","newzone":"South","lat":35.9027,"lng":-87.8765},{"code":"99","zone":"South","desc":"Cuba Landing Marina","newzone":"South","lat":35.8754,"lng":-87.9299},{"code":"40","zone":"South","desc":"Cuba Landing Rd North of I-40","newzone":"South","lat":35.8754,"lng":-87.9299},{"code":"98","zone":"South","desc":"Cuba Landing Rd South of I-40","newzone":"South","lat":35.8754,"lng":-87.9299},{"code":"16","zone":"South","desc":"Pond Bottom","newzone":"South","lat":35.8754,"lng":-87.9299},{"code":"63","zone":"South","desc":"Natchez Trace Youth Academy","newzone":"South","lat":35.8321,"lng":-87.8704},{"code":"91","zone":"South","desc":"Old Citgo @ 137","newzone":"South","lat":35.8754,"lng":-87.9299},{"code":"52","zone":"South","desc":"Old Hot Rod & Cadillac's, Blue Hole","newzone":"South","lat":35.9422,"lng":-87.8754},{"code":"96","zone":"South","desc":"Cedar Grove Rd","newzone":"South"},{"code":"41","zone":"South","desc":"Barren Hollow Rd, Cell Tower, KOA Camp","newzone":"South","lat":35.8809,"lng":-87.7919},{"code":"05","zone":"South","desc":"Paint Rock Landing","newzone":"South","lat":35.8754,"lng":-87.9299},{"code":"48","zone":"South","desc":"Boat Landing on Dyer Rd","newzone":"South"},{"code":"39","zone":"South","desc":"Duck River Bridge (13s)","newzone":"South","lat":35.9422,"lng":-87.8754},{"code":"90","zone":"South","desc":"Burned House Rd","newzone":"South"},{"code":"45","zone":"South","desc":"Hwy 230","newzone":"South","lat":35.8617,"lng":-87.6917},{"code":"06","zone":"South","desc":"Stewart Branch Rd","newzone":"South","lat":35.8617,"lng":-87.6917},{"code":"92","zone":"South","desc":"Vaden Branch Rd, Spann Loop","newzone":"South","lat":35.8617,"lng":-87.6917},{"code":"07","zone":"South","desc":"Pumpkin Ck Rd","newzone":"South","lat":35.8617,"lng":-87.6917},{"code":"53","zone":"South","desc":"Bucket Branch Rd","newzone":"South","lat":35.8617,"lng":-87.6917},{"code":"54","zone":"South","desc":"Glenwood Church, Forks River Rd","newzone":"South","lat":35.8617,"lng":-87.6917},{"code":"23","zone":"East","desc":"Save-a-lot, Holland Construction","newzone":"West","lat":36.0845,"lng":-87.8114},{"code":"95","zone":"East","desc":"County Garage, Eastside Church","newzone":"East"},{"code":"79","zone":"East","desc":"Gorman Church","newzone":"East"},{"code":"28","zone":"East","desc":"McEwen Industrial Park","newzone":"East","lat":36.1078,"lng":-87.6331},{"code":"96","zone":"East","desc":"Mt Zion Church, Mt Zion Rd","newzone":"East","lat":36.1078,"lng":-87.6331},{"code":"67","zone":"East","desc":"Pine Hill Nazarene Church","newzone":"East","lat":36.1078,"lng":-87.6331},{"code":"20","zone":"East","desc":"Hwy 70 East of McEwen","newzone":"East","lat":36.1078,"lng":-87.6331},{"code":"97","zone":"East","desc":"Free Will Baptist Church","newzone":"East"},{"code":"82","zone":"East","desc":"Old Blacktop Rd","newzone":"East"},{"code":"78","zone":"East","desc":"Dunn Rd, Little Blue Ck Rd","newzone":"East"},{"code":"56","zone":"East","desc":"Indian Creek Rd","newzone":"East","lat":36.0426,"lng":-87.6015},{"code":"15","zone":"East","desc":"Bold Springs Rd","newzone":"East"},{"code":"64","zone":"East","desc":"Hwy 231","newzone":"East"},{"code":"55","zone":"East","desc":"White Oak Rd, Sheehy Rd, Smith Branch Rd","newzone":"East"},{"code":"35","zone":"East","desc":"Little Hurricane, Martin Branch","newzone":"East"},{"code":"42","zone":"East","desc":"Poplar Grove Rd and Church","newzone":"East"},{"code":"36","zone":"East","desc":"Curtis Chapel Rd, Bradley Rd, Trace Ck Rd","newzone":"East"},{"code":"43","zone":"East","desc":"Bold Springs Rd","newzone":"East"},{"code":"19","zone":"East","desc":"Baptist Branch Rd","newzone":"East","lat":35.9949,"lng":-87.648},{"code":"88","zone":"East","desc":"Windy Park, Windy Trace","newzone":"East"},{"code":"65","zone":"East","desc":"Halls Creek Rd and Church","newzone":"East"},{"code":"66","zone":"East","desc":"Tennessee Ridge Rd","newzone":"North","lat":36.312,"lng":-87.7734},{"code":"44","zone":"East","desc":"Mariah Church","newzone":"East"},{"code":"30","zone":"East","desc":"Greenbriar Rd, Mooney Hollow Rd","newzone":"East"},{"code":"08","zone":"East","desc":"Pennywinkle Rd, Gander Branch Rd","newzone":"East"},{"code":"67","zone":"East","desc":"White Oak Creek, Trotter Rd","newzone":"East"},{"code":"29","zone":"East","desc":"Ogden Rd, Williams Hollow Rd","newzone":"East"},{"code":"09","zone":"East","desc":"Arnold Hollow Rd","newzone":"East"},{"code":"71","zone":"East","desc":"East Big Richland Rd","newzone":"North","lat":36.1639,"lng":-87.8921},{"code":"93","zone":"East","desc":"North Hurricane Creek Rd","newzone":"North"},{"code":"89","zone":"East","desc":"CCC Rd","newzone":"East"},{"code":"94","zone":"East","desc":"Old Nashville Hwy","newzone":"East"}];
+
+const ZONE_VARS = { North:'--north', South:'--south', East:'--east', West:'--west' };
+
+const POOL_KEY = 'hcso_patrol_pool_v1';
+const LOG_KEY = 'hcso_patrol_log_v1';
+
+function safeGet(key){
+  try{ const v = localStorage.getItem(key); return v ? JSON.parse(v) : null; }
+  catch(e){ return null; }
+}
+function safeSet(key, val){
+  try{ localStorage.setItem(key, JSON.stringify(val)); }catch(e){}
+}
+
+function allKeys(){
+  return LOCATIONS.map((l,i)=>i);
+}
+
+function loadPool(){
+  let pool = safeGet(POOL_KEY);
+  if(!pool || !Array.isArray(pool)){
+    pool = shuffle(allKeys());
+    safeSet(POOL_KEY, pool);
+  }
+  return pool;
+}
+
+function shuffle(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function loadLog(){
+  return safeGet(LOG_KEY) || [];
+}
+
+function saveLog(log){
+  safeSet(LOG_KEY, log.slice(-40));
+}
+
+function updatePoolBar(pool){
+  const total = LOCATIONS.length;
+  document.getElementById('poolRemaining').textContent = pool.length;
+  document.getElementById('poolTotal').textContent = total;
+  document.getElementById('poolFill').style.width = ((total - pool.length)/total*100).toFixed(0)+'%';
+}
+
+function renderLog(){
+  const log = loadLog();
+  const section = document.getElementById('logSection');
+  const entries = document.getElementById('logEntries');
+  entries.innerHTML='';
+  if(log.length===0){ section.style.display='none'; return; }
+  section.style.display='block';
+  log.slice().reverse().forEach(entry=>{
+    const row = document.createElement('div');
+    row.className='log-entry';
+    row.innerHTML = `<span>${entry.time}</span><span>${entry.items.join(' \u00b7 ')}</span>`;
+    entries.appendChild(row);
+  });
+}
+
+function draw(){
+  let pool = loadPool();
+  if(pool.length < 5){
+    const used = allKeys().filter(k=>!pool.includes(k));
+    pool = pool.concat(shuffle(used));
+  }
+  const picked = pool.slice(0,5);
+  pool = pool.slice(5);
+  safeSet(POOL_KEY, pool);
+  updatePoolBar(pool);
+
+  const results = document.getElementById('results');
+  results.innerHTML='';
+  picked.forEach((idx,i)=>{
+    const loc = LOCATIONS[idx];
+    const el = document.createElement('div');
+    el.className='stop';
+    el.style.setProperty('--zone-color', `var(${ZONE_VARS[loc.newzone] || '--amber'})`);
+    el.innerHTML = `
+      <div class="stop-num">${i+1}</div>
+      <div class="stop-body">
+        <div class="stop-zone">${loc.newzone.toUpperCase()} ZONE</div>
+        <div class="stop-desc">${loc.desc}</div>
+        <div class="stop-code">Legacy: ${loc.zone} zone, code ${loc.code}</div>
+      </div>`;
+    results.appendChild(el);
+  });
+
+  const log = loadLog();
+  log.push({
+    time: new Date().toLocaleString([], {month:'short', day:'numeric', hour:'2-digit', minute:'2-digit'}),
+    items: picked.map(idx=>LOCATIONS[idx].desc.split(',')[0])
+  });
+  saveLog(log);
+  renderLog();
+}
+
+document.getElementById('drawBtn').addEventListener('click', draw);
+
+document.getElementById('resetPool').addEventListener('click', ()=>{
+  const fresh = shuffle(allKeys());
+  safeSet(POOL_KEY, fresh);
+  updatePoolBar(fresh);
+});
+
+document.getElementById('clearLog').addEventListener('click', ()=>{
+  safeSet(LOG_KEY, []);
+  renderLog();
+});
+
+updatePoolBar(loadPool());
+renderLog();
+
+// --- Install prompts ---
+let deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', (e)=>{
+  e.preventDefault();
+  deferredPrompt = e;
+  const bar = document.getElementById('installBar');
+  bar.style.display = 'flex';
+  bar.addEventListener('click', async ()=>{
+    if(!deferredPrompt) return;
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice;
+    deferredPrompt = null;
+    bar.style.display = 'none';
+  }, {once:true});
+});
+
+const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+if(isIOS && !isStandalone){
+  document.getElementById('iosHint').style.display = 'flex';
+}
+</script>
+</body>
+</html>
